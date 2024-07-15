@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Converter</title>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Video to Audio Converter</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="icon">
+                <h2>FastConvert</h2>
+            </div>
+        </div>
+    </header>
+    <h1>Video to Audio Converter</h1>
+    <div class="main">
+    <form action="/upload" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+        <input type="file" name="videoFile" accept="video/*" required />
+        <div class="form-group">
+            <label for="audioFormat">Audio Format:</label>
+            <select id="audioFormat" name="audioFormat" class="dropdown">
+                <option value="mp3">MP3</option>
+                <option value="m4a">M4A</option>
+                <option value="webm">WEBM</option>
+                <option value="wav">WAV</option>
+                <option value="aac">AAC</option>
+            </select>
+        </div>
+        <button type="submit">Convert</button>
+    </form>
+    <div id="error-message" style="display: none; color: red;">Please select a video file.</div>
+    <div id="download-link" style="display: none;">
+        <a id="audio-link" href="#" download>Download Converted Audio</a>
+        <button oneclick id="convert-more-button" >Convert More</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
